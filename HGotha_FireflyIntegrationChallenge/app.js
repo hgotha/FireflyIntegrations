@@ -21,6 +21,8 @@
 *                   Landscape version, but it was not working well. What I did 
 *                   instead was create a new page and table of what I think it would 
 *                   look like sideways
+*                   5. When putting in long number for input button, have to 
+*                   highlight number and drag to the right to see the rest
 *
 *
 *   References:
