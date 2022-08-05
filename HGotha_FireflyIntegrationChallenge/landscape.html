@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="landscape.css" />
+    <link rel="stylesheet" href="landscapelightmode.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Table including buttons and input -->
+    <div id="calc">
+        <div :class="(font === 'font1' ? 'font1' : 'font2')">
+            <table :class="(mode ==='dark' ? 'dark' : 'light')" cellspacing="10">
+                <tr>
+                    <td colspan="8">
+                        <input :class="(mode ==='dark' ? 'inpdark' : 'inplight')" type="text" v-model="result" disabled>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-C' : 'light-button-C')" @click="clear">C</td>
+                    <td colspan="2"></td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-O' : 'light-button-O')" @click="setOperator('^')">x<sup>y</sup></td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-O' : 'light-button-O')" @click="setOperator('*')">×</td>
+                </tr>
+                <tr>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(7)">7</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(8)">8</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(9)">9</td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-O' : 'light-button-O')" @click="setOperator('/')">÷</td>
+                </tr>
+                <tr>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(4)">4</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(5)">5</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(6)">6</td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-O' : 'light-button-O')" @click="setOperator('-')">-</td>
+                </tr>
+                <tr>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(1)">1</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(2)">2</td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="test(3)">3</td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-O' : 'light-button-O')" @click="setOperator('+')">+</td>
+
+                </tr>
+                <tr>
+                    <td colspan="4":class="(mode === 'dark' ? 'button-col2' : 'light-button-col2')" @click="test(0)">0
+                    </td>
+                    <td colspan="2" :class="(mode ==='dark' ? 'button' : 'button-light')" @click="addpoint()">.</td>
+                    <td colspan="2" :class="(mode === 'dark' ? 'button-row2' : 'light-button-row2')" @click="equal()">=</td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Navbar for Table-->
+        <div id="calc">
+            <table :class="(mode === 'dark' ? 'calcOptions' : 'light-calcOptions')" cellspacing="10">
+                <tr>
+                    <td>
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">
+                                <i class="fa fa-bars"></i></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a @click="changeTheme()">Theme</a>
+                                <a href="./index.html">Orientation</a>
+                                <a @click="changeFont()">Font</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Calculation Log-->
+        <section id="log" class="logContainer">
+            <h2>Calculator Log</h2>
+            <ul>
+                <li v-for="message in logMessages">{{ message }}</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+    
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

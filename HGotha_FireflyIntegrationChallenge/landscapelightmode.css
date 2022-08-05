@@ -1,0 +1,94 @@
+.light {
+    background-color: #a5d5d6;
+    color: rgb(49, 49, 49);
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.light-calcOptions {
+    background-color: #f35fa4;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 150px;
+    height: 300px;
+    margin: -300px 500px 0px;
+}
+.inplight {
+    display: block;
+    width: 95%;
+    height: 40px;
+    padding: 10px 0px 0;
+    margin: auto;
+    text-align: right;
+    font-size: 3rem;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    border-color: #f35fa4;
+    background-color: #a5d5d6;
+    color: rgb(49, 49, 49);
+}
+.button-light{
+    background-color: #a5d5d6;
+    margin: 10px;
+    border-radius: 40px;
+    border: 2px solid rgb(136, 136, 136);
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.button-light:hover,
+.light-button-C:hover,
+.light-button-col2:hover {
+    background-color: #769899;
+}
+
+.light-button-O:hover,
+.light-button-row2:hover {
+    background-color: #743039;
+}
+
+.light-button-C {
+    margin: 10px;
+    border-radius: 40px;
+    border: 2px solid #f579b3;
+    background-color: #a5d5d6;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.light-button-O {
+    margin: 10px;
+    border-radius: 40px;
+    background-color: #f579b3;
+    color: #a5d5d6;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.light-button-col2 {
+    margin: 10px;
+    border-radius: 40px;
+    border: 2px solid #f579b3;
+    background-color: #a5d5d6;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.light-button-row2 {
+    margin: 10px;
+    border-radius: 40px;
+    background-color: #f579b3;
+    color: #a5d5d6;
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
