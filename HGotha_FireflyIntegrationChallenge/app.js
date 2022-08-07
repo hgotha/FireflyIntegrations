@@ -8,21 +8,17 @@
 *                   buttons, two themes and fonts, portrait and
 *                   landscape layouts, and a log.
 *   
-*   Flaws:          1. After running a calculation, the decimal button won't 
-*                   work correctly if you just click this button, must click
-*                   a number or clear button before using
-*                   2. CSS and classes I think I could edit to be more efficient,
+*   Flaws:         
+*                   1. CSS and classes I think I could edit to be more efficient,
 *                   there is a lot of repetitive styling and classes that make code
 *                   long
-*                   3. Hamburger button for some reason does not trigger when 
+*                   2. Hamburger button for some reason does not trigger when 
 *                   clicking on the image, have to click around the border to 
 *                   work
-*                   4. I attempted to rotate and transform the table to create a 
+*                   3. I attempted to rotate and transform the table to create a 
 *                   Landscape version, but it was not working well. What I did 
 *                   instead was create a new page and table of what I think it would 
 *                   look like sideways
-*                   5. When putting in long number for input button, have to 
-*                   highlight number and drag to the right to see the rest
 *
 *
 *   References:
@@ -61,7 +57,7 @@ const app = Vue.createApp({
         addpoint() {
             if (this.result == '0') this.result += '.';
             else if (!this.result.includes('.')) this.result += '.';
-            this.result = value.toString();
+            this.reset = false;
         },
         // clears result 
         clear() {
@@ -115,7 +111,6 @@ const app = Vue.createApp({
 
             // resetting values 
             this.reset = true;
-            this.result = '0';
         },
         equal() {
             this.calculate();
